@@ -23,7 +23,7 @@ body {
 
 .header {
   height: var(--tamanho-header);
-  border-bottom: 2px solid #32b9cd;
+  border-bottom: 2px solid #5e0606;
 }
 
 .header .container {
@@ -34,7 +34,7 @@ body {
 
 .header a {
   text-decoration: none;
-  color: #e3b062;
+  color: white;
 }
 
 .agora {
@@ -47,11 +47,11 @@ body {
   align-items: center;
   justify-content: space-between;
   list-style: none;
-  color: #e3b062;
+  color: #5e0606;
 }
 
 .titulo {
-  color: #32b9cd;
+  color: #5e0606;
   width: fit-content;
   font-weight: 500;
 }
@@ -63,7 +63,7 @@ body {
 /* FOOTER */
 
 .footer {
-  background-color: #32b9cd;
+  background-color: #5e0606;
   height: 150px;
   color: #fff;
   display: flex;
@@ -79,14 +79,18 @@ body {
   font-size: 12px;
 }
 
-* SIMULADOR */
+/* SIMULADOR */
 
-.simulador {
-  color: white;
+.revelacao h2{
+    display: flex; 
+    height: 10px;
+    color: white;
 }
 
-.simulador .container {
-  flex-direction: column;
-  overflow: scroll; 
-  height: var(--tamanho-simulador);
+.revelacao .container {
+    display: flex;
+    flex-direction: column;
+    height: var(--tamanho-simulador);
+    color: white;
+    height: 1600px;
 }
