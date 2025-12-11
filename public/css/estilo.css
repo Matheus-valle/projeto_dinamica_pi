@@ -21,6 +21,10 @@ body {
   margin: auto;
 }
 
+.container h1{
+  color: white
+}
+
 .header {
   height: var(--tamanho-header);
   border-bottom: 2px solid #32b9cd;
@@ -62,10 +66,41 @@ body {
 
 /* BANNER */
 
+.secao_home {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+    margin-bottom: 100px;
+}
+
+.secao_home .banner .container {
+  width: 99%;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.div_msg h1 {
+    font-size: 80px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.div_msg span{
+  color:#5e0606
+}
+
+.div_img img {
+width: 660px;
+height: 642px;
+margin-top: 50px;
+border-radius: 0px 30px 30px 0px;
+}
+
 .banner {
   height: var(--tamanho-banner);
-  color: white;
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  color: rgb(0, 0, 0);
   background-size: cover;
 }
 
@@ -307,17 +342,6 @@ input {
   width: 50px;
 }
 
-/* SIMULADOR */
-
-.simulador {
-  color: white;
-}
-
-.simulador .container {
-  flex-direction: column;
-  overflow: scroll; 
-  height: var(--tamanho-simulador);
-}
 
 /* ALERTA */
 
