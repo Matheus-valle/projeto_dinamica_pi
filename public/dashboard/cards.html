@@ -59,34 +59,34 @@
             </div>
             <div class="area-parametros-alerta">
                 <p class="titulo-legenda">
-                    Legenda - Parâmetros para Alertas
+                    Parâmetros de Luminosidade
                 </p>
                 <div class="parametros-alerta">
                     <div class="item-regua perigo-frio">
-                        <p>Perigo</p>
-                        <p>&lt;=5°C</p>
-                    </div>
-                    <div class="item-regua alerta-frio">
-                        <p>Alerta</p>
-                        <p>&lt;=10°C</p>
-                    </div>
-                    <div class="item-regua ideal">
-                        <p>Ideal</p>
-                        <p>20°C</p>
-                    </div>
-                    <div class="item-regua alerta-quente">
-                        <p>Alerta</p>
-                        <p>&gt;=22°C</p>
+                        <p>Baixa</p>
+                        <p>L < 30%</p>
                     </div>
                     <div class="item-regua perigo-quente">
-                        <p>Perigo</p>
-                        <p>&gt;=23°C</p>
+                        <p>Alta</p>
+                        <p>L > 70%</p>
                     </div>
                 </div>
             </div>
 
             <div class="cards" id="cardAquarios">
+                                    <div class="card-aquario">
+                        <div class="title-aquario">
+                            <h1>Ambiente Sala 1</h1>
+                        </div>
+                        <div class="desc-aquario">
+                        <div class="temperatura">
+                            <p id="temp_aquario_${item.id}">78-%</p>
+                        </div>
+                        <div class="cor-alerta" id="card_${item.id}"></div>
+                    </div>
+                   
 
+            </div>
             </div>
 
         </div>
@@ -106,7 +106,7 @@
                         </div>
                         <div class="desc-aquario">
                         <div class="temperatura">
-                            <p id="temp_aquario_${item.id}">-°C</p>
+                            <p id="temp_aquario_${item.id}">-%</p>
                         </div>
                         <div class="cor-alerta" id="card_${item.id}"></div>
                     </div>
