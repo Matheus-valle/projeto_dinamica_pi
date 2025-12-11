@@ -6,6 +6,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
 .label-captura {
@@ -17,6 +18,8 @@ body {
   width: 100%;
   color: rgb(216, 216, 216);
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
 }
 
 .dash-right .avisos .container {
@@ -26,15 +29,15 @@ body {
 }
 
 .dash-right .avisos .container .div-form {
-  width: 95%;
+  width: 100%;
 }
 
 .dash-right .avisos .container .div-form #form_postagem {
-  width: 95%;
+  width: 100%;
 }
 
 .dash-right .avisos .div-form label {
-  width: 95%;
+  width: 100%;
 }
 
 .dash-right .avisos .div-form input {
@@ -331,6 +334,7 @@ canvas {
 
 .janela {
   display: flex;
+    background-color: #212124;
   /* width: 100vw; */
 }
 
