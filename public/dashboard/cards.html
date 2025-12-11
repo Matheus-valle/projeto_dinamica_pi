@@ -99,6 +99,45 @@
 <script>
 
     function exibirAquarios() {
+        var idEmpresa = sessionStorage.ID_EMPRESA;
+        fetch(`/salas/obter-salas/${idEmpresa}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO obter salas()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+                
+                resposta.json().then(json => {
+                    console.log(json);
+                    
+                    // console.log(JSON.stringify(json));
+                    
+
+                    // setTimeout(function () {
+                    //     window.location = "./dashboard/cards.html";
+                    // }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar ao listar salas!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
         JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
             document.getElementById("cardAquarios").innerHTML += `
                     <div class="card-aquario">
