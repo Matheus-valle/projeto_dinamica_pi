@@ -59,6 +59,18 @@ insert into empresa (razao_social, codigo_ativacao) values ('Empresa 1', 'ED145B
 insert into empresa (razao_social, codigo_ativacao) values ('Empresa 2', 'A1B2C3');
 insert into dark_room (descricao, fk_empresa) values ('Sala escura dedicada para filmes', 1);
 insert into dark_room (descricao, fk_empresa) values ('Sala escura dedicada para fotos de esporte', 2);
+INSERT INTO medida (luminosidade, fk_dark_room) VALUES
+	(50, 2);
 
 select * from empresa; 
 select * from dark_room; 
+
+
+SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode, 'ONLY_FULL_GROUP_BY', ''));   
+
+SELECT d.descricao, (
+            SELECT luminosidade FROM medida WHERE fk_dark_room = d.id ORDER BY medida.id DESC LIMIT 1
+        ) AS 'ultimo_registro', m.momento FROM medida m
+            JOIN dark_room d ON fk_dark_room = d.id
+            WHERE d.fk_empresa = 2
+            GROUP BY d.id;
