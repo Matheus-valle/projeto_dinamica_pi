@@ -2,11 +2,11 @@ var salasModel = require("../models/salasModel");
 
 function obterSalas(req, res) {
 
-    var idRoom = req.params.idRoom;
+    var fk_empresa = req.params.fkEmpresa;
 
     console.log(`Recuperando medidas em tempo real`);
 
-    salasModel.obterSalas(idRoom).then(function (resultado) {
+    salasModel.obterSalas(fk_empresa).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {

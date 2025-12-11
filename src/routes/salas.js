@@ -3,7 +3,7 @@ var router = express.Router();
 
 var salasController = require("../controllers/salasController");
 
-router.get("/obter-salas/:idRoom", function (req, res) {
+router.get("/obter-salas/:fkEmpresa", function (req, res) {
     salasController.obterSalas(req, res);
 });
 

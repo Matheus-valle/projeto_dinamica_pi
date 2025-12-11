@@ -60,7 +60,7 @@ insert into empresa (razao_social, codigo_ativacao) values ('Empresa 2', 'A1B2C3
 insert into dark_room (descricao, fk_empresa) values ('Sala escura dedicada para filmes', 1);
 insert into dark_room (descricao, fk_empresa) values ('Sala escura dedicada para fotos de esporte', 2);
 INSERT INTO medida (luminosidade, fk_dark_room) VALUES
-	(80, 1);
+	(50, 1);
 
 select * from empresa; 
 select * from dark_room; 
@@ -68,8 +68,8 @@ select * from dark_room;
 
 
 SELECT d.descricao, (
-	SELECT lumiosidade FROM medida WHERE fk_dark_room =  d.id)
-), m.momento FROM medida m
-	JOIN dark_room d ON fk_dark_room = d.id
-    WHERE d.fk_empresa = 1
-    GROUP BY d.id;
+            SELECT luminosidade FROM medida WHERE fk_dark_room = d.id ORDER BY medida.id DESC LIMIT 1
+        ) AS 'ultimo_registro', m.momento FROM medida m
+            JOIN dark_room d ON fk_dark_room = d.id
+            WHERE d.fk_empresa = ${fk_empresa}
+            GROUP BY d.id
