@@ -66,6 +66,7 @@ select * from empresa;
 select * from dark_room; 
 
 
+SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode, 'ONLY_FULL_GROUP_BY', ''));   
 
 SELECT d.descricao, (
             SELECT luminosidade FROM medida WHERE fk_dark_room = d.id ORDER BY medida.id DESC LIMIT 1
