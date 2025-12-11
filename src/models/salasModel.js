@@ -2,7 +2,7 @@ var database = require("../database/config");
 
 function obterSalas(fk_empresa) {
     var instrucaoSql = `
-        SELECT d.descricao, (
+        SELECT d.descricao, d.id, (
             SELECT luminosidade FROM medida WHERE fk_dark_room = d.id ORDER BY medida.id DESC LIMIT 1
         ) AS 'ultimo_registro', m.momento FROM medida m
             JOIN dark_room d ON fk_dark_room = d.id

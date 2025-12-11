@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PhotoTech | Tempo Real</title>
-   
+
 
 
     <link rel="stylesheet" href="./../css/dashboards.css">
@@ -75,19 +75,7 @@
             </div>
 
             <div class="cards" id="cardAquarios">
-                                    <div class="card-aquario">
-                        <div class="title-aquario">
-                            <h1>Ambiente Sala 1</h1>
-                        </div>
-                        <div class="desc-aquario">
-                        <div class="temperatura">
-                            <p id="temp_aquario_${item.id}">78-%</p>
-                        </div>
-                        <div class="cor-alerta" id="card_${item.id}"></div>
-                    </div>
-                   
-
-            </div>
+                
             </div>
 
         </div>
@@ -105,18 +93,36 @@
             headers: {
                 "Content-Type": "application/json"
             },
-            
+
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO obter salas()!")
 
             if (resposta.ok) {
                 console.log(resposta);
-                
+
                 resposta.json().then(json => {
                     console.log(json);
-                    
+
+                    for (var i = 0; i < json.length; i++) {
+                        var dado = json[i]
+                        document.getElementById("cardAquarios").innerHTML += `
+                            <div class="card-aquario">
+                            <div class="title-aquario">
+                                <h1>${dado.descricao}</h1>
+                            </div>
+                            <div class="desc-aquario">
+                                <div class="temperatura">
+                                    <p id="temp_aquario_${dado.id}">${dado.ultimo_registro}%</p>
+                                </div>
+                                <div class="cor-alerta" id="card_${dado.id}"></div>
+                            </div>
+
+
+                        </div>
+                        `
+                    }
                     // console.log(JSON.stringify(json));
-                    
+
 
                     // setTimeout(function () {
                     //     window.location = "./dashboard/cards.html";
